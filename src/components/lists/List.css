@@ -1,0 +1,33 @@
+.list {
+    padding: 12px 0;
+}
+
+.list h2 {
+    margin: 0 0 18px;
+    padding: 0 0 10px;
+    border-bottom: 2px solid #dbe4f0;
+    color: #172554;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    text-align: left;
+}
+
+.list ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+    align-items: stretch;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+.list li {
+    min-width: 0;
+    list-style: none;
+}
+
+@media (max-width: 520px) {
+    .list h2 {
+        font-size: 21px;
+    }
+}
