@@ -1,0 +1,102 @@
+.filters-panel {
+    display: grid;
+    gap: 14px;
+    margin: 20px;
+    padding: 18px;
+    border: 2px solid #fff;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+
+.filter-section,
+.filter-subsection {
+    display: grid;
+    gap: 10px;
+}
+
+.filter-section + .filter-section {
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.filter-section h3,
+.filter-subsection h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.filter-options button {
+    padding: 7px 12px;
+    border: 1px solid #fff;
+    border-radius: 0;
+    background: #000;
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.35;
+    cursor: pointer;
+    transition:
+        background-color 0.16s ease,
+        border-color 0.16s ease,
+        color 0.16s ease,
+        transform 0.16s ease;
+}
+
+.filter-options button:hover {
+    transform: translateY(-1px);
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+.filter-options button.active {
+    border-color: #fff;
+    background: #fff;
+    color: #000;
+}
+
+.filter-options button:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+.filter-subsection {
+    margin-top: 4px;
+    padding: 12px;
+    border: 1px solid #fff;
+    border-radius: 0;
+    background: transparent;
+}
+
+@media (max-width: 520px) {
+    .filters-panel {
+        gap: 12px;
+        margin: 14px;
+        padding: 14px;
+    }
+
+    .filter-options {
+        gap: 7px;
+    }
+
+    .filter-options button {
+        padding: 7px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .filter-options button {
+        transition: none;
+    }
+}

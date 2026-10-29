@@ -1,4 +1,6 @@
 
+import './Filterbuttons.css'
+
 export function FilterButtons({
     selectedChapter,
     setSelectedChapter,
@@ -10,21 +12,22 @@ export function FilterButtons({
     setSelectedSource
     
 }){
-    const chapters = ['Totes', 'Capítol 1', 'Capítol 2', 'Capítol 3'];
-    const mainCategory = ['Totes', 'Personatges', 'Armes', 'Items'];
-    const weaponType = ['Totes', 'Espasa', 'Arc', 'Bastó'];
-    const source = ['Totes', 'Joc', 'Merchandising', 'Altres'];
+    const chapters = ['All', 'Chapter 1', 'Chapter 2', 'Chapter 3', 'Chapter 4', 'Chapter 5'];
+    const mainCategory = ['All', 'Consumable', 'Weapon', 'Armor', 'Key Item', 'Light World'];
+    const weaponType = ['All', 'Sword', 'Axe', 'Scarf', 'Ring', 'Other'];
+    const source = ['All', 'Shop', 'Malius', 'Forest', 'Castle', 'Cyber', 'Sanctuary', 'Default'];
 
     return (
-        <div>
-            <div>
+        <div className="filters-panel">
+            <div className="filter-section">
                 <h3>Filtra per capítol:</h3>
-                <div>
+                <div className="filter-options">
                     {chapters.map((chapter) => (
                         <button
+                            type="button"
                             key={chapter}
                             className={selectedChapter === chapter ? 'active' : ''}
-                            onClick={() => console.log(`Filtrant per capítol: ${chapter}`)}
+                            onClick={() => setSelectedChapter(chapter)}
                         >
                             {chapter}
                         </button>
@@ -32,28 +35,30 @@ export function FilterButtons({
                 </div>
             </div>
 
-            <div>
+            <div className="filter-section">
                 <h3>Filtra per categoria principal:</h3>
-                <div>
+                <div className="filter-options">
                     {mainCategory.map((category) => (
                         <button
+                            type="button"
                             key={category}
                             className={selectedMainCategory === category ? 'active' : ''}
-                            onClick={() => console.log(`Filtrant per categoria principal: ${category}`)}>
+                            onClick={() => setSelectedMainCategory(category)}>
                             {category}
                         </button>
                     ))}
                 </div>
 
-                { selectedMainCategory === 'Armes' && (
-                    <div>
+                {selectedMainCategory === 'Weapon' && (
+                    <div className="filter-subsection">
                         <h3>Filtra per tipus d'arma:</h3>
-                        <div>
+                        <div className="filter-options">
                             {weaponType.map((type) => (
                                 <button
+                                    type="button"
                                     key={type}
                                     className={selectedWeaponType === type ? 'active' : ''}
-                                    onClick={() => console.log(`Filtrant per tipus d'arma: ${type}`)}>
+                                    onClick={() => setSelectedWeaponType(type)}>
                                     {type}
                                 </button>
                             ))}
@@ -62,14 +67,15 @@ export function FilterButtons({
                 )}
             </div>
             
-            <div>
+            <div className="filter-section">
                 <h3>Filtra per llocs:</h3>
-                <div>
+                <div className="filter-options">
                     {source.map((src) => (
                         <button
+                            type="button"
                             key={src}
                             className={selectedSource === src ? 'active' : ''}
-                            onClick={() => console.log(`Filtrant per lloc: ${src}`)}>
+                            onClick={() => setSelectedSource(src)}>
                             {src}
                         </button>
                     ))}

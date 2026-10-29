@@ -2,6 +2,6 @@ import './Footer.css';
 
 export function Footer() {
     return <footer>
-        <p>&copy; 2023 Llistat Videojocs. Tots els drets reservats.</p>
+        <p>Gràcies per explorar el món de Deltarune</p>
     </footer>
 }

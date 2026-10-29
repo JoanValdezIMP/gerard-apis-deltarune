@@ -1,13 +1,18 @@
 .list {
-    padding: 12px 0;
+    margin: 20px;
+    padding: 18px;
+    border-radius: 0;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.7);
 }
 
 .list h2 {
     margin: 0 0 18px;
     padding: 0 0 10px;
-    border-bottom: 2px solid #dbe4f0;
-    color: #172554;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.75);
+    color: #fff;
+    font-family: var(--sans);
     font-size: 24px;
     text-align: left;
 }
@@ -27,6 +32,11 @@
 }
 
 @media (max-width: 520px) {
+    .list {
+        margin: 14px;
+        padding: 14px;
+    }
+
     .list h2 {
         font-size: 21px;
     }
